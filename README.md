@@ -26,6 +26,13 @@ az deployment group create --resource-group <resource-group> --template-file .\a
 
 func azure functionapp publish <your_function_app_name>
 ```
+## Deploy to Azure using VScode:
+https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python
+
+
+## Redeploy to Azure:
+https://docs.microsoft.com/en-us/azure/developer/javascript/how-to/with-web-app/azure-function-resource-group-management/add-delete-functions-redeploy
+
 
 ## Configuration
 https://iotespresso.com/azure-function-to-fastapi-app-service/
