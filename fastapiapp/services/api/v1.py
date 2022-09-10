@@ -31,8 +31,10 @@ def download_tweet_media(data: TwitterVideoDownloaderModel):
     """
     tw_downloader = TwitterVideoDownloader()
     # Call script
-    tw_data = tw_downloader.extract_tweet_status_info(tweet_url=data.url)
-    
+    try:
+        tw_data = tw_downloader.extract_tweet_status_info(tweet_url=data.url)
+    except:
+        tw_data = {"error": "There's no video in this tweet"}
     # Return response
     return JSONResponse(
         status_code=status.HTTP_200_OK,
