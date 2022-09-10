@@ -75,11 +75,14 @@ class TwitterVideoDownloader:
                 tweet_info_data = ydl.extract_info(tweet_url, download=False)
                 tweet_media_formats = tweet_info_data.get("formats", [tweet_info_data])
         except:
-            return "There's no video in this tweet"
-        dict_tweet_data_extracted["tweet_meta_data"] = self.extract_tweet_meta_data(
-            tweet_info_data, tweet_url
-        )
-        dict_tweet_data_extracted["tweet_medias"] = self.extract_tweet_media_resolutions(
-            tweet_media_formats
-        )
+            raise "There's no video in this tweet"
+        try:
+            dict_tweet_data_extracted["tweet_meta_data"] = self.extract_tweet_meta_data(
+                tweet_info_data, tweet_url
+            )
+            dict_tweet_data_extracted["tweet_medias"] = self.extract_tweet_media_resolutions(
+                tweet_media_formats
+            )
+        except:
+            raise "There's no video in this tweet"
         return dict_tweet_data_extracted
