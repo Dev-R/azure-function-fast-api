@@ -6,6 +6,6 @@ nest-asyncio==1.5.5
 pydantic==1.9.1
 python-decouple==3.6
 sniffio==1.2.0
-starlette==0.19.1
+starlette==0.27.0
 typing_extensions==4.3.0
 youtube-dl==2021.12.17
